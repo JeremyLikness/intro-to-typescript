@@ -1,3 +1,5 @@
+// This should be compiled with ES6 as well for contrast
+
 // I have a name and a save method 
 interface INgController {
     ctrlName: string;

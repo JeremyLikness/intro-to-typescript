@@ -22,7 +22,7 @@ class Person {
 
     }
 
-    @log
+    //@log
     showFullNameWithPrefix(prefix: string): string {
         return `${prefix} ${this.firstName} ${this.lastName}`;
     }
@@ -30,6 +30,8 @@ class Person {
 
 var person = new Person("Jeremy", "Likness");
 console.log(`Hello, ${person.showFullNameWithPrefix("Mr.")}`);
+
+console.log('...');
 
 // decorator that takes a parameter
 // now we can choose what to pass the method to 
@@ -55,6 +57,7 @@ class SpecialPerson {
 
     }
 
+    //@logToSource(console.info)
     //@logToSource(logWithTime)
     showFullNameWithPrefix(prefix: string): string {
         return `${prefix} ${this.firstName} ${this.lastName}`;

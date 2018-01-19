@@ -25,20 +25,27 @@ let obj = {
     x: 0
 }, obj_copy = obj;
 console.log(`copy is ${obj_copy.x}`);
-console.log('changing source object'); 
+console.log('changing source object 0->1'); 
 obj.x = 1; // changed this on the source, not the copy 
 console.log (`copy is ${obj_copy.x}`);
 
+console.log('...');
+
 let obj_real_copy = {...obj};
 console.log(`real copy is ${obj_real_copy.x}`);
-console.log('changing source object');
+console.log('changing source object 1->5');
 obj.x = 5; 
 console.log (`real copy is still ${obj_real_copy.x}`);
 
+console.log('...');
+
 // array 
-let arr = [1, 2, 3], copy_of_arr = [...arr, 4]; 
+let arr = [1, 2, 3], assignment_of_arr = arr, copy_of_arr = [...arr]; 
 arr.pop();
+console.log(`array assigned after popping an element: ${assignment_of_arr}`);
 console.log(`array copy after popping an element: ${copy_of_arr}`);
+
+console.log('...');
 
 // complex example - I manipulate a string and return a string 
 interface IManipulator {

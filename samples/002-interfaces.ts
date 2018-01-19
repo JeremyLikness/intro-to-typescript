@@ -10,6 +10,21 @@ interface IHaveOneToo {
     id: number;
 }
 
+var myObject: IHaveOneToo = { id: 1 };
+
+//myObject.foo = 'x';
+//myObject.desc = 'description';
+
+var myObjectToo: IHaveAnIdentifier = myObject;
+
+function showId(obj: IHaveAnIdentifier): void {
+    console.log(`Showing id: ${obj.id}`);
+}
+
+showId(myObject);
+showId({ id: 3.14 }); // <IHaveAnIdentifier>
+// showId({id:42, foo: 'x'}) // as IHaveOneToo);
+
 interface IHaveAnOptionalDescription {
     desc?: string;
 }
@@ -18,24 +33,11 @@ interface IHaveIdAndMaybeDescription extends IHaveAnIdentifier, IHaveAnOptionalD
 
 }
 
-function showId(obj: IHaveAnIdentifier): void {
-    console.log(`Showing id: ${obj.id}`);
-}
-
 function showDesc(obj: IHaveAnOptionalDescription): void {
     if (obj.desc) {
         console.log(obj.desc);
     }
 }
-
-var myObject: IHaveOneToo = { id: 1 };
-
-//myObject.foo = 'x';
-//myObject.desc = 'description';
-
-showId(myObject);
-showId(<IHaveAnIdentifier>{ id: 3.14 });
-showId({id:42, foo: 'x'} as IHaveOneToo);
 
 var myObjectWithDescription: IHaveIdAndMaybeDescription = {
     id: 1974,
