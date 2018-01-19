@@ -1,4 +1,14 @@
-// mixins with decorators
+// class decorator
+function ctor(constructor: Function) {
+    const getFnName = fn => {
+        let funcText = <string>fn.toString();
+        let trimmed = funcText.substr('function '.length);
+        let name = trimmed.substr(0, trimmed.indexOf('('));
+        return name.trim();
+    };
+    console.log(`Constructed ${getFnName(constructor)} at ${new Date()}`);
+}
+
 // log is an attribute we can apply. It intercepts a method and: 
 // 1. writes the arguments to the console 
 // 2. executes the method and writes the result 
@@ -17,6 +27,7 @@ function log(target: Object, propertyKey: string, descriptor: TypedPropertyDescr
     return descriptor;
 }
 
+//@ctor
 class Person {
     constructor(public firstName: string, public lastName: string) {
 
