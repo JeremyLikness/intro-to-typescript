@@ -2,7 +2,7 @@
 
 This project contains the presentation and sample code for my "Introduction to TypeScript for JavaScript Developers" session at the [Atlanta JavaScript Meetup](https://www.meetup.com/AtlantaJavaScript/).
 
-[Run the Presentation](./presentation/intrototypescript.html).
+[Run the Presentation](https://jeremylikness.github.io/intro-to-typescript/presentation/intrototypescript.html).
 
 ## Examples
 
